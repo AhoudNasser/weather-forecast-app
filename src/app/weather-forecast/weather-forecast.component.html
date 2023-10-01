@@ -1,0 +1,67 @@
+<!-- <form (ngSubmit)="getWeatherForecast()">
+    <input type="text" placeholder="Enter city name" [(ngModel)]="cityName" name="cityName" required>
+    <button type="submit">Get Weather Forecast</button>
+  </form>
+
+  <div *ngIf="weatherData">
+    <h2>Weather Forecast for {{ weatherData.name }}</h2>
+    <p>Temperature: {{ weatherData.main.temp }}°C</p>
+    <p>Weather: {{ weatherData.weather[0].description }}</p>
+    <p>Humidity: {{ weatherData.main.humidity }}%</p>
+   
+  </div>
+  <label>
+    <input type="radio" name="unit" [(ngModel)]="temperatureUnit" value="metric"> Celsius
+  </label>
+  <label>
+    <input type="radio" name="unit" [(ngModel)]="temperatureUnit" value="imperial"> Fahrenheit
+  </label>
+
+  <img *ngIf="weatherData" [src]="'http://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '.png'" alt="Weather Icon"> -->
+
+
+
+  
+  <div class="home-container" >
+    <form class="container">
+      <div class="content">
+        <div class="container mt-5" >
+            <div class="card text-white bg-primary m-5 Stylethis">
+            <div class="row">
+              
+                <div class="card-header text-center">
+               
+                  <br>
+                  <br>  
+                  <h2>Today Weather</h2>
+                    <div class="card-body">
+                    <div *ngIf="weatherData">
+                      <h3>{{ weatherData.name }}</h3>
+                      <p>Temperature: {{ weatherData.main.temp }}°C</p>
+                      <p>Description: {{ weatherData.weather[0].description }}</p>
+                      <p>Humidity: {{ weatherData.main.humidity }}%</p>
+                      <img src="https://openweathermap.org/img/w/{{ weatherData.weather[0].icon }}.png" alt="Weather Icon">
+                    </div>
+                    <div *ngIf="error">
+                      <p>{{ error }}</p>
+                    </div>
+                
+                    
+                       <br>
+                    
+               
+                
+                    <form (ngSubmit)="searchWeather()">
+                      <input type="text" class="form-control mb-3" placeholder="Enter a Country Name" [(ngModel)]="city" name="city">
+                      <br>
+                      <button type="submit" class="btn btn-light">Search</button>
+                    </form>
+                      
+                  </div>
+                 </div>
+                 </div>
+                 </div>
+              </div>
+      </div>
+      </form>
+    </div>
